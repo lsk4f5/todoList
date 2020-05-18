@@ -26,8 +26,10 @@ class TodoListViewController: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        self.overrideUserInterfaceStyle = .light
+//        self.navigationController?.navigationBar.titleTextAttributes = [.foregroundColor: UIColor.black]
         // NaviBarのタイトルを大きく表示させる
-        navigationController?.navigationBar.prefersLargeTitles = true
+//        navigationController?.navigationBar.prefersLargeTitles = true
         
     }
     

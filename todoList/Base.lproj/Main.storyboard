@@ -6,7 +6,7 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--TODO-->
+        <!--TODOリスト-->
         <scene sceneID="Ihw-tX-biG">
             <objects>
                 <tableViewController id="Ee2-5J-0Ma" customClass="TodoListViewController" customModule="todoList" customModuleProvider="target" sceneMemberID="viewController">
@@ -29,8 +29,9 @@
                             <outlet property="delegate" destination="Ee2-5J-0Ma" id="dQG-E0-NiC"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" title="TODO" id="xmY-RH-ml0">
+                    <navigationItem key="navigationItem" title="TODOリスト" id="xmY-RH-ml0">
                         <barButtonItem key="rightBarButtonItem" systemItem="add" id="egb-2a-pAg">
+                            <color key="tintColor" systemColor="systemBlueColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             <connections>
                                 <action selector="addButtonPressed:" destination="Ee2-5J-0Ma" id="9vS-LA-VFz"/>
                             </connections>
