@@ -29,16 +29,6 @@ class TodoListViewController: UITableViewController {
         // NaviBarのタイトルを大きく表示させる
         navigationController?.navigationBar.prefersLargeTitles = true
         
-        // あらかじめ3つアイテムを作っておく
-        let item1: Item = Item(title: "宿題をする")
-        let item2: Item = Item(title: "牛乳を買う")
-        let item3: Item = Item(title: "手紙を書く")
-        
-        // 配列に追加
-        itemArray.append(item1)
-        itemArray.append(item2)
-        itemArray.append(item3)
-        
     }
     
     // MARK - セルの数を指定
@@ -47,6 +37,10 @@ class TodoListViewController: UITableViewController {
         return itemArray.count
         
     }
+    
+//    override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+//        return 88
+//    }
     
     // MARK - セルのカスタマイズ
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -84,17 +78,26 @@ class TodoListViewController: UITableViewController {
 
         let alert = UIAlertController(title: "新しいアイテムを追加", message: "", preferredStyle: .alert)
 
-        let action = UIAlertAction(title: "リストに追加", style: .default) { (action) in
+        let action = UIAlertAction(title: "追加", style: .default) { (action) in
             // 「リストに追加」を押された時に実行される処理
-
+            
             let newItem: Item = Item(title: textField.text!)
-
+            
             // アイテム追加処理
             self.itemArray.append(newItem)
             self.tableView.reloadData()
-
+            
         }
-
+        
+        alert.addAction(
+            UIAlertAction(
+                title: "キャンセル",
+                style: .cancel,
+                handler: {(action) -> Void in
+                    self.navigationController?.popViewController(animated: true)
+            })
+        )
+        
         alert.addTextField { (alertTextField) in
             alertTextField.placeholder = "新しいアイテム"
             textField = alertTextField
