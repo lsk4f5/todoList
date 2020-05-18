@@ -104,5 +104,15 @@ class TodoListViewController: UITableViewController {
         present(alert, animated: true, completion: nil)
 
     }
+    
+    // MARK - スワイプでのアイテム削除機能
+    override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
+
+        // アイテム削除処理
+        itemArray.remove(at: indexPath.row)
+        let indexPaths = [indexPath]
+        tableView.deleteRows(at: indexPaths, with: .automatic)
+
+    }
 }
 
