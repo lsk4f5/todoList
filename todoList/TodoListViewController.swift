@@ -27,7 +27,10 @@ class TodoListViewController: UITableViewController {
         super.viewDidLoad()
         
         self.overrideUserInterfaceStyle = .light
-//        self.navigationController?.navigationBar.titleTextAttributes = [.foregroundColor: UIColor.black]
+        
+//        空のcellの線を消す
+        tableView.tableFooterView = UIView()
+
         // NaviBarのタイトルを大きく表示させる
 //        navigationController?.navigationBar.prefersLargeTitles = true
         
@@ -40,9 +43,6 @@ class TodoListViewController: UITableViewController {
         
     }
     
-//    override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-//        return 88
-//    }
     
     // MARK - セルのカスタマイズ
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
