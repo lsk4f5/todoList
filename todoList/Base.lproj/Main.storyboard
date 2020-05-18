@@ -15,7 +15,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="ToDoItemCell" id="PyN-SN-fQv" customClass="ToDoItemCell">
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="ToDoItemCell" id="PyN-SN-fQv">
                                 <rect key="frame" x="0.0" y="28" width="414" height="43.5"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="PyN-SN-fQv" id="xQm-IT-e9S">
@@ -30,7 +30,11 @@
                         </connections>
                     </tableView>
                     <navigationItem key="navigationItem" title="TODO" id="xmY-RH-ml0">
-                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="egb-2a-pAg"/>
+                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="egb-2a-pAg">
+                            <connections>
+                                <action selector="addButtonPressed:" destination="Ee2-5J-0Ma" id="9vS-LA-VFz"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="fbU-PZ-vfo" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
